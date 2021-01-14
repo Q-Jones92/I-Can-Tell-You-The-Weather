@@ -1,9 +1,9 @@
 function weatherSearch(searchValue) {
     var APIKey = "76867f1d9d820e6fd45b355d5a55ddc8";
-    console.log(APIKey);
+  
   
     var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=" + APIKey;
-    console.log(queryURL, "this is with search results");
+  
   
     $.ajax({
       url: queryURL,
@@ -38,7 +38,7 @@ function weatherSearch(searchValue) {
       var APIKey = "76867f1d9d820e6fd45b355d5a55ddc8";
   
     
-      console.log("Forecast", APIKey);
+     
     
       var oneCallAPI = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=currently,minutely,hourly,alerts&appid=" + APIKey;
       var fiveDayForecast= "http://api.openweathermap.org/data/2.5/uvi?lat=" +lat+ "&lon=" +lon+ "&appid=" +APIKey;
@@ -54,8 +54,7 @@ function weatherSearch(searchValue) {
           "src","https://openweathermap.org/img/wn/" + response.daily[0].weather[0].icon + "@2x.png");
         $("#humidity1").text(`Humidity: ${response.daily[0].humidity}%`);
         $("#temp1").text(`Temperature (F): ${Math.round((response.daily[0].temp.day - 273.15) * 1.8 + 32)}°F`);
-        console.log(response.daily[0].temp);
-  
+        
         $("#icon2").attr(
           "src","https://openweathermap.org/img/wn/" + response.daily[1].weather[0].icon + "@2x.png");
         $("#humidity2").text(`Humidity: ${response.daily[1].humidity}%`);
